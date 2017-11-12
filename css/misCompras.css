@@ -1,0 +1,274 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.elementsContainer{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 90vh;
+}
+
+.container{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 100vh;
+    background-color: #EEEEEE;
+}
+.header {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 10vh;
+    background: #0077BB;
+}
+
+.menu{
+    position: relative;
+    float: right;
+    height: 30px;
+    padding-right: 2%;
+    margin-top: 30px !important;
+}
+.menusec{
+    position: relative;
+    float: left;
+    width: 95px;
+    color: white;
+    height: 100%;
+    padding-top: 0px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.menusec:hover{
+    cursor: pointer;
+    border-bottom: 2px solid white;
+}
+
+.mask{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 100%;
+    background: rgba(44,44,43,.8);
+}
+
+.user{
+    position: relative;
+    float: left;
+    width: 5vh;
+    color: #2C2C2B;
+    margin-left: 4%;
+    margin-top: 3vh
+}
+
+.user:hover{
+    cursor: pointer;
+}
+
+.username{
+    position: relative;
+    float: left;
+    margin-top: 3vh;
+    color: #2C2C2B;
+    margin-left: 2%;
+    font-size: 11pt;
+}
+
+.menuUser{
+    width: 12%;
+    height: 40px !important;
+}
+
+.menuUser:hover{
+    cursor: pointer;
+}
+
+
+.menuUser li {
+    margin: 0px 5px;
+    padding: 0.1em 1em 0.5em 1em;
+    background-color: rgba(255,255,255,.99);
+    width: 40%;
+    height: 50%;
+    float: right;
+    list-style-type: none;
+    position: relative;
+}
+
+.menuUser li:hover {
+    background-color: rgba(255,255,255,.5);
+}
+
+.menuUser li a:link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.table{
+    position: relative;
+    float: left;
+    width: 85%;
+    margin-left: 7.5%;
+
+    margin-top: 5%;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 3px 3px 3px rgba(0,0,0,.2);
+}
+.formheader{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 15%;
+}
+.formcontent{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 85%;
+}
+.tabletitle{
+    position: relative;
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 70px;
+    margin-top: -35px;
+    border-radius: 5px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    margin-left: 3%;
+    color: white;
+    background: #0077BB;
+    box-shadow: 3px 3px 3px rgba(0,0,0,.2);
+}
+.txttable{
+    position: relative;
+    float: left;
+    margin-left: 15px;
+    font-size: 15pt;
+    margin-top: 8px;
+    color: #2C2C2B;
+    font-weight: lighter;
+}
+.formtitle{
+    position: relative;
+    float: left;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 40px;
+    margin-top: -15px;
+    border-radius: 5px;
+    padding-top: 5px;
+    margin-left: 3%;
+    color: white;
+    background: #0077BB;
+    box-shadow: 3px 3px 3px rgba(0,0,0,.2);
+}
+.continput{
+    position: relative;
+    float: left;
+    width: 100%;
+    margin-top: 10px;
+}
+.inputtxt{
+    position: relative;
+    float: left;
+    width: 20%;
+    text-align: right;
+    padding-right: 3%;
+    padding-left: 2%;
+    box-sizing: border-box;
+    font-size: 11pt;
+    margin-top: 5px;
+}
+.displaytxt{
+    position: relative;
+    float: left;
+    width: 20%;
+    text-align: right;
+    padding-right: 3%;
+    padding-left: 2%;
+    color: #0077BB;
+    box-sizing: border-box;
+    font-size: 15pt;
+    margin-top: 5px;
+}
+.forminput{
+    position: relative;
+    float: left;
+    width: 70% !important;
+    outline: none !important;
+}
+.txtdisplay{
+    position: relative;
+    float: left;
+    margin-top: 8px;
+    font-size: 13pt;
+    width: 70% !important;
+}
+.contsend{
+    position: relative;
+    float: left;
+    width: 100%;
+
+}
+.sendform{
+    position: relative;
+    float: right;
+    padding-left: 40px;
+    padding-right: 40px;
+    height: 40px;
+    margin-top: 35px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    padding-top: 7px;
+    margin-right: 7%;
+    color: white;
+    background: #0077BB;
+    box-shadow: 3px 3px 3px rgba(0,0,0,.2);
+}
+.tablecontent{
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 60vh;
+    overflow-y: scroll;
+}
+table{
+    position: relative;
+    float: left;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 10px;
+    border:none !important;
+}
+thead{
+    background: transparent !important;
+    border:none !important;
+    border-bottom: 1px solid #d9d9d9 !important;
+}
+tbody{
+    border:none !important;
+}
+th{
+    color: #0094EC;
+    border:none !important;
+    font-weight: lighter;
+}
+td{
+    color: #363636;
+    border-bottom: 1px solid #d9d9d9 !important;
+}
+p[id^="calificacion"]{
+    position: relative;
+    float: right;
+}
+
+div[class^="rateyo"]{
+    margin-top: 30px;
+}

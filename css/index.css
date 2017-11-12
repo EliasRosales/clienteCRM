@@ -1,0 +1,235 @@
+
+header, section, footer, nav, article, figure{
+    display: block;
+}
+
+*{
+    vertical-align: baseline;
+    font-weight: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    border: 0 none;
+    outline: 0;
+    margin: 0px;
+    padding: 0px;
+}
+
+.container{
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 100vh;
+	background-color: #EEEEEE;
+}
+.header {
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 10vh;
+    background: #0077BB;
+}
+
+.menu{
+	position: relative;
+	float: right;
+	height: 30px;
+    padding-right: 2%;
+	margin-top: 30px !important;
+}
+.menusec{
+	position: relative;
+	float: left;
+	width: 95px;
+	color: white;
+	height: 100%;
+	padding-top: 0px;
+	box-sizing: border-box;
+	text-align: center;
+}
+.menusec:hover{
+	cursor: pointer;
+	border-bottom: 2px solid white;
+}
+
+.mask{
+	position: relative;
+	float: left;
+	width: 100%;
+	height: 100%;
+	background: rgba(44,44,43,.8);
+}
+
+.user{
+	position: relative;
+	float: left;
+	width: 5vh;
+	color: #2C2C2B;
+    margin-left: 4%;
+	margin-top: 3vh 
+}
+
+.user:hover{
+	cursor: pointer;
+}
+
+.menuUser{
+    width: 12%;
+    height: 40px !important;
+}
+
+.menuUser:hover{
+    cursor: pointer;
+}
+
+
+.menuUser li {
+    margin: 0px 5px;
+    padding: 0.1em 1em 0.5em 1em;
+    background-color: rgba(255,255,255,.99);
+    width: 40%;
+    height: 100%;
+    float: right;
+    list-style-type: none;
+    position: relative;
+}
+
+.menuUser li:hover {
+    background-color: rgba(255,255,255,.5);
+}
+
+.menuUser li a:link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.username{
+	position: relative;
+	float: left;
+	margin-top: 3vh;
+	color: #2C2C2B;
+	margin-left: 2%;
+	font-size: 11pt;
+}
+
+.container, nav{
+	width: 100%;
+	max-width: 1600px;
+	min-width: 1200px;
+	overflow: auto;
+	margin: 0px auto;
+	padding: 0 0%;
+}
+
+nav .container{
+	margin: 30px auto;
+}
+.container > article {
+	width: 31%;
+	height: 250px;
+	margin: 1%;
+	float: left;
+	margin-left: 10px;
+	position: relative;
+	text-align: center;
+	overflow: hidden;
+}
+
+.container article h1{
+	padding: 5%;
+	width: 100%;
+	height: 5%;
+	color: #FFF;
+	background-color: rgba(0,0,0,.3);
+	font-size: 1em;
+}
+
+section article div{
+	position: absolute;
+	top: 88%;
+	width: 100%;
+	height: 100%;
+	background-color:  rgba(255,255,255,.99);
+	-webkit-transition: all .7s ease-in-out;
+	-moz-transition: all .7s ease-in-out;
+	-o-transition: all .7s ease-in-out;
+	-ms-transition: all .7s ease-in-out;
+	transition: all .7s ease-in-out;
+}
+
+.animar{
+	top: 0;
+}
+
+section article div > :first-child {
+	text-align: right;
+	padding: 1.4% 14% 1.8% 0%;
+	margin-bottom: 5%;
+	color: #fff;
+	background: #3498bd url(../img/icons/up.png) 95% 50% no-repeat;
+	background-size: 5%;
+	-webkit-transition: all .7s ease-in-out;
+	-moz-transition: all .7s ease-in-out;
+	-o-transition: all .7s ease-in-out;
+	-ms-transition: all .7s ease-in-out;
+	transition: all .7s ease-in-out;
+}
+section article div .confCompra > :first-child {
+	text-align: right;
+	padding: 1.4% 14% 1.8% 0%;
+	margin-bottom: 5%;
+	color: #fff;
+	background: #3498bd;
+	background-size: 5%;
+	-webkit-transition: all .7s ease-in-out;
+	-moz-transition: all .7s ease-in-out;
+	-o-transition: all .7s ease-in-out;
+	-ms-transition: all .7s ease-in-out;
+	transition: all .7s ease-in-out;
+}
+
+section article div .rotateIcon{
+	background: #e74c3c url(../img/icons/down.png) 95% 50% no-repeat;
+	background-size: 5%;
+}
+
+section article div .confCompra .rotateIcon{
+	background: #e74c3c;
+	background-size: 5%;
+}
+
+
+section article div :first-child:hover {
+	cursor: pointer;
+}
+
+p[id^="boton"]{
+	display: inline-block;
+	margin: 1%;
+	padding: 2%;
+	background-color: #3498bd;
+	color: #fff;
+}
+
+p[id^="boton"]:hover{
+	background-color: #e74c3c;
+	cursor: pointer;
+}
+
+section article div a{
+	color: #fff  ;
+	text-decoration: none;
+}
+
+section article div .confCompra{
+	align-items: center;
+	padding-top: 50px;
+}
+
+footer{
+
+	position: relative;
+	float: left;
+	height: 100px;
+	width: 100%;
+}
