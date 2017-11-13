@@ -4,9 +4,7 @@ var url = "http://localhost:8000/api/";
 $(document).ready(function() {
     $('html').niceScroll();
     $(document).foundation();
-    if (!("Id" in localStorage)) {
-        window.location.href = "login.html";
-    } else {
+
         $(".menuusertxt").text(localStorage.getItem("Name") + " " + localStorage.getItem("LastName"));
         $(".username").text(localStorage.getItem("Nickname"));
 
@@ -16,7 +14,7 @@ $(document).ready(function() {
         $("#txtMailInfo").text(localStorage.getItem("Mail"));
 
         //Seccion que rellena tabla de clientes
-        var urlGetProduct = url + "product/get_products/";
+        var urlGetProduct = url + "products/get_products/";
         $.post(urlGetProduct, function (response) {
             for (var i = 0; i < (response.data).length; i++) {
                 console.log(response.data[i]);
@@ -24,7 +22,7 @@ $(document).ready(function() {
             }
         });
 
-    }
+
 });
 
 $(function(){
