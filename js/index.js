@@ -15,11 +15,10 @@ $(document).ready(function() {
 
         //Seccion que rellena tabla de clientes
         var urlGetProduct = url + "product/get_products/";
-        $.post(urlGetProduct, {product: 0}, function (response) {
-            for (var i = 0; i < (response.product).length; i++) {
-                console.log(response.product[i]);
-                $(".container").append('<article>' + '<div class="comprar">' + '<p>Descripción</p>' + '<p>'+(response.users[i]).name+'</p>' + '<div class="confCopmra" hidden >' + '<p> Comprar</p>' + '<p></p>' + '<p>Cantidad: <input type="numeric" name="cantidad"></p>' + '<p>Total:</p>' + '<p id="boton" onclick="confirmar()">Confirmar</p>' + '</div>' + '</div>' + '<h1></h1>' + '</article>');
-
+        $.post(urlGetProduct, function (response) {
+            for (var i = 0; i < (response.data).length; i++) {
+                console.log(response.data[i]);
+                $(".container").append('<style type="text/css">' + '.container article:nth-child(1){' + 'background-image: url('+(response.data[i]).image+');' + '</style><article>' + '<div class="comprar">' + '<p>Descripción</p>' + '<p>'+(response.data[i]).description+'</p>' + '<div class="confCopmra" hidden >' + '<p> Comprar</p>' + '<p>'+(response.data[i]).price+'</p>' + '<p>Cantidad: <input type="numeric" name="cantidad"></p>' + '<p>Total:</p>' + '<p id="boton" onclick="confirmar()">Confirmar</p>' + '</div>' + '</div>' + '<h1>'+(response.data[i]).name+'</h1>' + '</article>');
             }
         });
 
