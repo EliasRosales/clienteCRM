@@ -4,7 +4,9 @@ var url = "http://localhost:8000/api/";
 $(document).ready(function() {
     $('html').niceScroll();
     $(document).foundation();
-    if ("Id" in localStorage) {
+    if (!("Id" in localStorage)) {
+        window.location.href = "login.html";
+    } else {
         $(".menuusertxt").text(localStorage.getItem("Name") + " " + localStorage.getItem("LastName"));
         $(".username").text(localStorage.getItem("Nickname"));
 
@@ -18,12 +20,10 @@ $(document).ready(function() {
         $.post(urlGetProduct, function (response) {
             for (var i = 0; i < (response.data).length; i++) {
                 console.log(response.data[i]);
-                $(".container").append('<style type="text/css">' + '.container article:nth-child(1){' + 'background-image: url('+(response.data[i]).image+');' + '</style><article>' + '<div class="comprar">' + '<p>Descripción</p>' + '<p>'+(response.data[i]).description+'</p>' + '<div class="confCopmra" hidden >' + '<p> Comprar</p>' + '<p>'+(response.data[i]).price+'</p>' + '<p>Cantidad: <input type="numeric" name="cantidad"></p>' + '<p>Total:</p>' + '<p id="boton" onclick="confirmar()">Confirmar</p>' + '</div>' + '</div>' + '<h1>'+(response.data[i]).name+'</h1>' + '</article>');
+                $(".container").append('<article>' + '<div class="comprar">' + '<p>Descripción</p>' + '<p>' + (response.data[i]).description + '</p>' + '<div class="confCopmra" hidden >' + '<p> Comprar</p>' + '<p>' + (response.data[i]).price + '</p>' + '<p>Cantidad: <input type="numeric" name="cantidad"></p>' + '<p>Total:</p>' + '<p id="boton" onclick="confirmar()">Confirmar</p>' + '</div>' + '</div>' + '<h1>' + (response.data[i]).name + '</h1>' + '</article><style type="text/css">' + '.container article {' + 'background-image: url(' + (response.data[i]).image + ');}' + '</style>');
             }
         });
 
-    } else {
-        window.location.href = "login.html";
     }
 });
 
