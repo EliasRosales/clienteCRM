@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+
+    <!-- STYLE ZONE -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/hover.css">
+    <link rel="stylesheet" href="css/swal.css">
+    <!-- STYLE ZONE -->
+</head>
+<body>
+<section class="header">
+    <div class="header">
+
+        <div class="menu">
+            <div class="menusec" id="menuT">Tienda</div>
+            <div class="menusec" id="menuMc">Mis Compras</div>
+        </div>
+        <img src="img/man-user.png" class="user" alt="" onclick="ver()" >
+        <div class="menuUser"  id="menuuser" style="display: none">
+            <ul >
+                <li><a href="login.html">Salir</a></li>
+            </ul>
+        </div>
+        <p class="username">Prueba</p>
+    </div>
+</section>
+
+<div class="form" id="updateClientForm" >
+    <div class="formheader">
+        <p class="formtitle">Actualizar Cliente</p>
+    </div>
+    <div class="formcontent">
+        <div class="continput">
+            <p class="inputtxt">Nombre</p>
+            <input id="upClientName"  type="text" class="forminput" placeholder="ejemp. Juan">
+        </div>
+        <div class="continput">
+            <p class="inputtxt">Apellido</p>
+            <input id="upClientLastName" type="text" class="forminput" placeholder="ejemp. Perez Martinez">
+        </div>
+        <div class="continput">
+            <p class="inputtxt">Usuario</p>
+            <input id="upClientUser" type="text" class="forminput" placeholder="ejemp. User123">
+        </div>
+        <div class="continput">
+            <p class="inputtxt">Correo</p>
+            <input id="upClientMail" type="text" class="forminput" placeholder="ejemp. hola@ejem.com">
+        </div>
+        <div class="contsend">
+            <p class="sendform" onclick="updateClient(event)" id="clientSendUpdate">SEND</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- SCRIPT ZONE -->
+<script src="js/swiper.jquery.min.js"></script>
+<script src="js/swiper.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/foundation.min.js"></script>
+<script src="js/skrollr.min.js"></script>
+<script src="js/mandrill.js"></script>
+<script src="js/swal.js"></script>
+<script src="js/nicescroll.js"></script>
+<script src="js/perfil.js"></script>
+<!-- SCRIPT ZONE -->
+</body>
+</html>
