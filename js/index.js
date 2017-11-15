@@ -49,5 +49,6 @@ function ver(){
         document.getElementById("menuuser").style.display="none"
     }else{
         document.getElementById("menuuser").style.display="block"
+        document.getElementById("username").style.display= "none"
     }
 }

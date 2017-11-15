@@ -13,8 +13,8 @@ function login(usuario, contraseña){
 	completeURL = url + "users/login/";
 	$.post(completeURL, {username: usuario, password: contraseña} , function(response) {
 		console.log(response);
-		if(response.response == 1){
-			if(response.data.user_type == 1){
+		if(response.response == 1 ){
+			if(response.data.user_type == 1 || response.data.user_type == 0 ){
 				localStorage.setItem("Id",response.data.id);
 		    	localStorage.setItem("Name",response.data.name);
 		    	localStorage.setItem("LastName",response.data.last_name);

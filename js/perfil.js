@@ -94,3 +94,22 @@ function updateClient(event){
     }, 'json');
 
 };
+
+$("#menuT").click(function (event) {
+    window.location.href=("index.html");
+});
+
+$("#menuMc").click(function (event) {
+    window.location.href=("misCompras.html");
+});
+
+
+function ver(){
+
+    if(document.getElementById("menuuser").style.display === "block"){
+        document.getElementById("menuuser").style.display="none"
+    }else{
+        document.getElementById("menuuser").style.display="block"
+        document.getElementById("username").style.display= "none"
+    }
+}

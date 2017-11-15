@@ -46,7 +46,9 @@ function ver() {
 
     if (document.getElementById("menuuser").style.display === "block") {
         document.getElementById("menuuser").style.display = "none"
+        document.getElementById("username").style.display= "block"
     } else {
         document.getElementById("menuuser").style.display = "block"
+        document.getElementById("username").style.display= "none"
     }
 }
