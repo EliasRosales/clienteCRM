@@ -108,7 +108,7 @@ header, section, footer, nav, article, figure{
 	margin-top: 3vh;
 	color: #2C2C2B;
 	margin-left: 2%;
-	font-size: 11pt;
+	font-size: 15pt;
 }
 
 .container, nav{
@@ -220,9 +220,7 @@ section article div a{
 }
 
 section article div .confCompra{
-    position: relative;
 	align-items: center;
-	padding-top: 10px; !important;
 }
 
 .container article{
@@ -233,6 +231,13 @@ section article div .confCompra{
 
 section article div div input{
     width: 30px;
+}
+
+section article div div p{
+    position: relative;
+    width: 100%;
+    float: left;
+    margin-bottom: 11px;
 }
 footer{
 
@@ -247,7 +252,6 @@ footer{
     float: left;
     width: 85%;
     margin-left: 7.5%;
-
     margin-top: 5%;
     border-radius: 5px;
     background: white;
