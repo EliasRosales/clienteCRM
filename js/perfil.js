@@ -7,32 +7,33 @@ $(document).ready(function() {
         $(".menuusertxt").text(localStorage.getItem("Name") + " " + localStorage.getItem("LastName"));
         $(".username").text(localStorage.getItem("Nickname"));
 
+        var idClient = localStorage.getItem("Id");
+        completeURL = url + "users/view_profile/";
+        $.post(completeURL, {user_id: idClient} , function(response) {
+            console.log(response);
+            if(response.response == 1){
+                $("#upClientName").attr("placeholder", response.user.name);
+                $("#upClientLastName").attr("placeholder", response.user.last_name);
+                $("#upClientUser").attr("placeholder", response.user.nickname);
+                $("#upClientMail").attr("placeholder", response.user.email);
+                $(".sendform").attr("id", idClient);
+
+            }else{
+                swal(
+                    'Error!',
+                    'Algo ocurrio mal.',
+                    'error'
+                )
+            }
+        });
+
     }else{
         window.location.href = "login.html";
     }
 });
-function showClientUpdate(){
-    var idClient = localStorage.getItem("Id");
-    console.log(idClient)
-    completeURL = url + "users/view_profile/"
-    $.post(completeURL, {user_id: idClient} , function(response) {
-        if(response.response == 1){
-            $("#upClientName").attr("placeholder", response.user.name);
-            $("#upClientLastName").attr("placeholder", response.user.last_name);
-            $("#upClientUser").attr("placeholder", response.user.nickname);
-            $("#upClientMail").attr("placeholder", response.user.email);
-            $("#clientSendUpdate").attr("id", idClient);
-        }else{
-            swal(
-                'Error!',
-                'Algo ocurrio mal.',
-                'error'
-            )
-        }
-    });
-}
-function updateClient(){
-    var idClient = localStorage.getItem("Id");
+
+function updateClient(event){
+    var idClient = event.target.id;
     completeURL = url + "users/update_user/";
     var clientname = $("#upClientName").val();
     var lastname = $("#upClientLastName").val();
@@ -47,12 +48,7 @@ function updateClient(){
                 'Usuario actualizado correctamente',
                 'success'
             )
-            $("#clientName").val("");
-            $("#clientLastName").val("");
-            $("#clientUser").val("");
-            $("#clientMail").val("");
-            $("#clientPassword").val("");
-            $(".tbodyClients").html("");
+
         }else{
             swal(
                 'Error',
@@ -60,7 +56,7 @@ function updateClient(){
                 'error'
             )
         }
-
+        window.location.href = "perfil.html";
     }, 'json');
 
 };
