@@ -8,7 +8,7 @@ $(document).ready(function() {
         $(".username").text(localStorage.getItem("Nickname"));
 
         //Seccion que trae los productos
-        var urlGetProduct = url + "purchases/get_p/";
+        var urlGetProduct = url + "purchases/register_purchase/";
         $.get(urlGetProduct, function (response) {
             for (var i = 0; i < (response.data).length; i++) {
                 console.log(response.data[i]);

@@ -25,7 +25,7 @@
         <img src="img/man-user.png" class="user" alt="" onclick="ver()" >
         <div class="menuUser"  id="menuuser" style="display: none">
             <ul >
-                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="perfil.html" onclick="showClientUpdate()">Perfil</a></li>
                 <li><a href="login.html">Salir</a></li>
             </ul>
         </div>
@@ -54,8 +54,12 @@
             <p class="inputtxt">Correo</p>
             <input id="upClientMail" type="text" class="forminput" placeholder="ejemp. hola@ejem.com">
         </div>
+        <div class="continput">
+            <p class="inputtxt">Password</p>
+            <input id="upClientPassword" type="text" class="forminput" placeholder="**********">
+        </div>
         <div class="contsend">
-            <p class="sendform" onclick="updateClient(event)" id="clientSendUpdate">SEND</p>
+            <p class="sendform" onclick="updateClient()">SEND</p>
         </div>
     </div>
 </div>

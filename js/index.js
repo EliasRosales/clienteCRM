@@ -13,7 +13,7 @@ $(document).ready(function() {
         $.get(urlGetProduct, function (response) {
             for (var i = 0; i < (response.data).length; i++) {
                 console.log(response.data[i]);
-                $(".container").append('<article>' + '<div class="comprar">' + '<p>Descripción</p>' + '<p>' + (response.data[i]).description + '</p>' + '<div class="confCopmra" hidden >' + '<p> Comprar</p>' + '<p> Precio: $' + (response.data[i]).price + ' MX</p>' + '<p>Disponibles:' + (response.data[i]).stock + ' </p>' + '<p>Cantidad: <input class="prod_cantidad" align="middle" type="numeric" name="cantidad" value="1"></p><p>Total:' + (response.data[i]).price * $(".prod_cantidad").val() + '</p>' + '<p id="boton" onclick="confirmar()">Confirmar</p>' + '</div>' + '</div>' + '<h1>' + (response.data[i]).name + '</h1>' + '</article><style type="text/css">' + '.container article {' + 'background-image: url(' + (response.data[i]).image + ');}' + '</style>');
+                $(".container").append('<article>' + '<div class="comprar">' + '<p>Descripción</p>' + '<p>' + (response.data[i]).description + '</p>' + '<div class="confCopmra" hidden >' + '<p> Comprar</p>' + '<p id="productprice"> Precio: $' + (response.data[i]).price + ' MX</p>' + '<p>Disponibles:' + (response.data[i]).stock + ' </p>' + '<p id="productquantity">Cantidad: <input class="prod_cantidad" align="middle" type="numeric" name="cantidad" value="1"></p><p>Total:' + (response.data[i]).price * $(".prod_cantidad").val() + '</p>' + '<p id="'+(response.data[i]).id+' onclick="confirmar(event)">Confirmar</p>' + '</div>' + '</div>' + '<h1>' + (response.data[i]).name + '</h1>' + '</article><style type="text/css">' + '.container article {' + 'background-image: url(' + (response.data[i]).image + ');}' + '</style>');
             }
 
             $("section article .comprar p:first-child").on("click", function () {
@@ -30,7 +30,37 @@ $(document).ready(function() {
     }
 });
 
-function confirmar(){
+function confirmar(event){
+    var urlPurchase = url + "purchases/register_purchase/";
+    var clientid = localStorage.getItem("Id");
+    var productid = event.targetid;
+    var quantity = $("#productquantity").val();
+    var total = $("#productquantity").val() * $("#productprice").val();
+    var clientpassword = $("#clientPassword").val();
+    if(clientid != "" && productid != "" && quantity != "" && total != "" ){
+        $.post(urlPurchase, {user_id: clientid, product_id: productid, quantity: quantity, total: total} , function(response) {
+            if(response.response == 1){
+                swal(
+                    'Success',
+                    'Usuario agregado correctamente',
+                    'success'
+                )
+            }else{
+                swal(
+                    'Error',
+                    'Error Ingresando el Usuario',
+                    'error'
+                )
+            }
+
+        }, 'json');
+    }else{
+        swal(
+            'Error',
+            'Ingresa todos los campos',
+            'error'
+        )
+    }
     window.location.href="index.html";
 }
 
