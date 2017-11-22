@@ -10,7 +10,7 @@ $(document).ready(function() {
         //Seccion que trae los productos
         var urlGetPurchases = url + "purchases/view_my_purchases/";
         var idClient = localStorage.getItem("Id");
-        $.get(urlGetPurchases,{user_id: idClient}, function (response) {
+        $.get(urlGetPurchases + idClient + '/', function (response) {
             for (var i = 0; i < (response.my_purchases).length; i++) {
                 console.log(response.my_purchases[i]);
                 $(".content").append('<tr> <td>'+ response.my_purchases[i].name +'</td><td>'+ response.my_purchases[i].quantity +'</td><td>'+ response.my_purchases[i].unit_price +'</td><td>'+ response.my_purchases[i].total +'</td><td><div class="rateyo"></div><p id="calificacion">'+ response.my_purchases[i].rate +'</p><noscript>Necesitas tener habilitado javascript para poder votar</noscript> </td> </tr>');
@@ -21,7 +21,7 @@ $(document).ready(function() {
                 rating: $("#calificacion").val(),
                 numStars: 5,
                 precision: 0,
-                minValue: 1,
+                minValue: 0,
                 maxValue: 5
             }).on("rateyo.change", function (e, data) {
 
