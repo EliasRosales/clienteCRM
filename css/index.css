@@ -201,7 +201,7 @@ section article div :first-child:hover {
 	cursor: pointer;
 }
 
-p[id^="boton"]{
+p[class^="boton"]{
 	display: inline-block;
 	margin: 1%;
 	padding: 2%;
@@ -237,8 +237,22 @@ section article div div p{
     position: relative;
     width: 100%;
     float: left;
-    margin-bottom: 11px;
+
 }
+
+#product_price, #price,#product_stock, #stock, #product_quantity, #quantity, #product_total, #total{
+	position: relative;
+	width: 50%;
+    height: 13.5%;
+	float: left;
+	margin-bottom: 5px;
+}
+
+#stock::-webkit-inner-spin-button{
+    -moz-appearance:textfield;
+    -webkit-appearance: none;
+}
+
 footer{
 
 	position: relative;

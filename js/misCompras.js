@@ -8,16 +8,17 @@ $(document).ready(function() {
         $(".username").text(localStorage.getItem("Nickname"));
 
         //Seccion que trae los productos
-        var urlGetProduct = url + "purchases/register_purchase/";
-        $.get(urlGetProduct, function (response) {
-            for (var i = 0; i < (response.data).length; i++) {
-                console.log(response.data[i]);
-                $(".container").append('<article>' + '<div class="comprar">' + '<p>Descripción</p>' + '<p>' + (response.data[i]).description + '</p>' + '<div class="confCopmra" hidden >' + '<p> Comprar</p>' + '<p> Precio: $' + (response.data[i]).price + ' MX</p>' + '<p>Disponibles:' + (response.data[i]).stock + ' </p>' + '<p>Cantidad: <input class="prod_cantidad" align="middle" type="numeric" name="cantidad" value="1"></p><p>Total:' + (response.data[i]).price * $(".prod_cantidad").val() + '</p>' + '<p id="boton" onclick="confirmar()">Confirmar</p>' + '</div>' + '</div>' + '<h1>' + (response.data[i]).name + '</h1>' + '</article><style type="text/css">' + '.container article {' + 'background-image: url(' + (response.data[i]).image + ');}' + '</style>');
+        var urlGetPurchases = url + "purchases/view_my_purchases/";
+        var idClient = localStorage.getItem("Id");
+        $.get(urlGetPurchases,{user_id: idClient}, function (response) {
+            for (var i = 0; i < (response.my_purchases).length; i++) {
+                console.log(response.my_purchases[i]);
+                $(".content").append('<tr> <td>'+ response.my_purchases[i].name +'</td><td>'+ response.my_purchases[i].quantity +'</td><td>'+ response.my_purchases[i].unit_price +'</td><td>'+ response.my_purchases[i].total +'</td><td><div class="rateyo"></div><p id="calificacion">'+ response.my_purchases[i].rate +'</p><noscript>Necesitas tener habilitado javascript para poder votar</noscript> </td> </tr>');
             }
 
             $(".rateyo").rateYo({
 
-                rating: 0,
+                rating: $("#calificacion").val(),
                 numStars: 5,
                 precision: 0,
                 minValue: 1,
