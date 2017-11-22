@@ -53,8 +53,7 @@ function confirmar(event){
     var total = event.path[1].children[8].value;
 
     $.post(urlPurchase, {user_id: clientid, product_id: productid, quantity: quantity, total: total} , function(response) {
-        console.log('hola');
-        console.log(response);
+        reload_data();
         if(response.response == 1){
             swal(
                 'Success',
@@ -71,7 +70,7 @@ function confirmar(event){
 
     }, 'json');
 
-    window.location.href="index.html";
+    //window.location.href="index.html";
 }
 
 $("#menuT").click(function (event) {
@@ -91,4 +90,31 @@ function ver(){
         document.getElementById("menuuser").style.display="block"
         document.getElementById("username").style.display= "none"
     }
+}
+
+function reload_data(){
+    $(".container").html('');
+    var urlGetProduct = url + "products/get_products/";
+    $.get(urlGetProduct, function (response) {
+        for (var i = 0; i < (response.data).length; i++) {
+            // console.log(response.data[i]);
+            $(".container").append('<article style="background-image: url(' + response.data[i].image + ')">' + '<div class="comprar">' + '<p>Descripción</p>' + '<p>' + response.data[i].description + '</p>' + '<div class="confCopmra" hidden >' + '<p> Comprar</p>' + '<p id="product_price"> Precio(mx/100): $</p><input id="price" type="number" value="' + (response.data[i]).price + '" disabled>' + '<p id="product_stock">Disponibles: </p> <input id="stock" type="number" value="' + (response.data[i]).stock + '" disabled> ' + '<p id="product_quantity">Cantidad: </p><input onchange="calTotal(event);" id="quantity"  type="number" min="1" max="' + (response.data[i]).stock + '"><p id="product_total"> Total: $ </p><input id="total" type="number"  type="number" disabled>' + '<p class="button" id="'+(response.data[i]).id+'"  onclick="confirmar(event)">Confirmar</p>' + '</div>' + '</div>' + '<h1>' + (response.data[i]).name + '</h1>' + '</article>');
+        }
+        $("section article .comprar p:first-child").on("click", function () {
+            $(this).parent().toggleClass("animar");
+            $(this).toggleClass("rotateIcon");
+            $(this).parent().parent().children("h1").slideToggle("slow");
+            $("section article .confCopmra").show();
+        });
+        /*$("#quantity").change(function () {
+            var cantidad = $(this).val();
+            var precio = $("#price").val();
+            $("#total").val(cantidad * precio );
+            console.log(cantidad * precio);
+        });*/
+
+
+
+
+    });
 }
