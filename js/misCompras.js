@@ -24,7 +24,7 @@ $(document).ready(function() {
                 minValue: 0,
                 maxValue: 5
             }).on("rateyo.change", function (e, data) {
-
+                var updateRate = url + "purchases/"
                 $("#calificacion").text(data.rating);
             });
 
