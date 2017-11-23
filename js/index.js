@@ -13,7 +13,7 @@ $(document).ready(function() {
         $.get(urlGetProduct, function (response) {
             for (var i = 0; i < (response.data).length; i++) {
                 // console.log(response.data[i]);
-                $(".container").append('<article style="background-image: url(' + response.data[i].image + ')">' + '<div class="comprar">' + '<p>Descripción</p>' + '<p>' + response.data[i].description + '</p>' + '<div class="confCopmra" hidden >' + '<p> Comprar</p>' + '<p id="product_price"> Precio(mx/100): $</p><input id="price" type="number" value="' + (response.data[i]).price + '" disabled>' + '<p id="product_stock">Disponibles: </p> <input id="stock" type="number" value="' + (response.data[i]).stock + '" disabled> ' + '<p id="product_quantity">Cantidad: </p><input onchange="calTotal(event);" id="quantity"  type="number" min="1" max="' + (response.data[i]).stock + '"><p id="product_total"> Total: $ </p><input id="total" type="number"  type="number" disabled>' + '<p class="button" id="'+(response.data[i]).id+'"  onclick="confirmar(event)">Confirmar</p>' + '</div>' + '</div>' + '<h1>' + (response.data[i]).name + '</h1>' + '</article>');
+                $(".container").append('<article style="background-image: url(' + response.data[i].image + ')">' + '<div class="comprar">' + '<p>Descripción</p>' + '<p class="descripcion">' + response.data[i].description + '</p>' + '<div class="confCopmra" hidden >' + '<p> Comprar</p>' + '<p id="product_price"> Precio(mx/100): $</p><input id="price" type="number" value="' + (response.data[i]).price + '" disabled>' + '<p id="product_stock">Disponibles: </p> <input id="stock" type="number" value="' + (response.data[i]).stock + '" disabled> ' + '<p id="product_quantity">Cantidad: </p><input onchange="calTotal(event);" id="quantity"  type="number" min="1" max="' + (response.data[i]).stock + '"><p id="product_total"> Total: $ </p><input id="total" type="number"  type="number" disabled>' + '<p class="button" id="'+(response.data[i]).id+'"  onclick="confirmar(event)">Confirmar</p>' + '</div>' + '</div>' + '<h1>' + (response.data[i]).name + '</h1>' + '</article>');
             }
             $("section article .comprar p:first-child").on("click", function () {
                 $(this).parent().toggleClass("animar");
@@ -56,7 +56,7 @@ function confirmar(event){
         reload_data();
         if(response.response == 1){
             swal(
-                'Success',
+                'Correcto',
                 'Se realizó correctamente la compra',
                 'success'
             )
